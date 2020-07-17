@@ -27,6 +27,7 @@ class Orders():
         self.timezone ="Australia/Sydney"
         self.currentTime = pytz.timezone(self.timezone).localize(datetime.now())
 
+    #get customer IDs
     def customerIdRquesting(self):
         self.customerIds = []
         customerId=''
@@ -65,7 +66,7 @@ class Orders():
             customerId = Customer.find('CustomerId').text
             self.customerIds.append(customerId)
 
-
+    #Insert customer ID to retrieve orders
     def orderInfoRequesting(self):
         response = ''
         data = ''
